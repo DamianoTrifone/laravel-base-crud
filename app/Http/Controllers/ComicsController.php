@@ -12,7 +12,7 @@ class ComicsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Comics $comics)
     {
         $comics = Comics::paginate(8); 
         return view('comics.index', compact('comics')); 
@@ -23,7 +23,7 @@ class ComicsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Comics $comics)
     {
         return view('comics.create', compact('comics'));
     }
